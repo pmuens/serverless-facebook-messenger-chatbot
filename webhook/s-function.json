@@ -21,7 +21,11 @@
       "apiKeyRequired": false,
       "requestParameters": {},
       "requestTemplates": {
-        "application/json": ""
+        "application/json": {
+          "hubChallenge": "$input.params('hub.challenge')",
+          "hubVerifyToken": "$input.params('hub.verify_token')",
+          "method": "$context.httpMethod"
+        }
       },
       "responses": {
         "400": {
